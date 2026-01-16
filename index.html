@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MultSev Solução Digital | Sites Profissionais que Convertem</title>
+  <meta name="description" content="Criamos sites profissionais, modernos e persuasivos que geram mais contactos no WhatsApp. Ideal para clínicas, lojas e prestadores de serviço em Angola.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href=" https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-escuro: #0d2b45;
+      --azul-medio: #1a3f5e;
+      --dourado: #d4af37;
+      --roxo: #5d3a9b;
+      --verde: #2a9d8f;
+      --branco: #ffffff;
+      --cinza-claro: #f5f7fa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Botão WhatsApp */
+    .btn-whatsapp {
+      display: inline-block;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white !important;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.15rem;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.7);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 0 4rem;
+      text-align: center;
+      background: linear-gradient(145deg, var(--azul-escuro), var(--azul-medio));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+      background: linear-gradient(to right, var(--dourado), var(--branco));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* Seções */
+    section {
+      padding: 5rem 0;
+    }
+
+    h2 {
+      font-size: 2.1rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--dourado);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Problema */
+    .problema-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .card h3 {
+      color: var(--dourado);
+      margin: 1rem 0;
+    }
+
+    /* Benefícios */
+    .beneficios ul {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .beneficios li {
+      padding: 1rem 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    .beneficios li::before {
+      content: "✓";
+      color: var(--dourado);
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    /* Exemplos */
+    .exemplos {
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .exemplos-note {
+      background: rgba(212, 175, 55, 0.12);
+      padding: 1.2rem;
+      border-left: 4px solid var(--dourado);
+      margin: 0 auto 2.5rem;
+      max-width: 800px;
+      font-style: italic;
+      border-radius: 0 10px 10px 0;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .exemplos-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .exemplo-item {
+      width: 140px;
+      height: 140px;
+      background: linear-gradient(135deg, var(--roxo), var(--azul-medio));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 0.5rem;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.4s ease;
+    }
+
+    .exemplo-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(93, 58, 155, 0.5);
+    }
+
+    /* Para quem é */
+    .publico {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .publico-card {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 2rem;
+      border-radius: 12px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .publico-card.sim {
+      border-top: 4px solid var(--verde);
+    }
+
+    .publico-card.nao {
+      border-top: 4px solid #ff6b6b;
+    }
+
+    /* CTA Final */
+    .cta-final {
+      background: linear-gradient(135deg, var(--roxo), var(--azul-escuro));
+      text-align: center;
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final h2 {
+      color: white;
+      font-size: 2.3rem;
+    }
+
+    .cta-final h2::after {
+      background: var(--dourado);
+    }
+
+    /* Animação geral */
+    .animate {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .animate.delay-1 { transition-delay: 0.1s; }
+    .animate.delay-2 { transition-delay: 0.2s; }
+    .animate.delay-3 { transition-delay: 0.3s; }
+    .animate.delay-4 { transition-delay: 0.4s; }
+    .animate.delay-5 { transition-delay: 0.5s; }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1.1rem; }
+      h2 { font-size: 1.8rem; }
+      section { padding: 3.5rem 0; }
+      .btn-whatsapp { padding: 12px 26px; font-size: 1.05rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 4rem 0 3rem; }
+      .hero h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.6rem; }
+    }
+    .imagem-destaque {
+    width: 100%;
+    height: 80vh;
+
+    background-image:
+        linear-gradient(
+            rgba(10, 15, 40, 0.35),
+            rgba(10, 15, 40, 0.35)
+        ),
+        url('https://images.unsplash.com/photo-1531297484001-80022131f5a1');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 0 0 40px 40px;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1 class="animate">Seu negócio está na internet, mas não gera clientes?</h1>
+      <p class="animate">Criamos sites digitais modernos que geram confiança e mais mensagens no WhatsApp.</p>
+      <a href="https://wa.me/244952805504" class="btn-whatsapp" target="_blank">Falar no WhatsApp Agora</a>
+    </div>
+  </section>
+
+  <!-- Problema -->
+  <section class="problema">
+    <div class="container">
+      <h2 class="animate">Você se identifica com isso?</h2>
+      <div class="problema-cards">
+        <div class="card animate delay-1">
+          <h3>Falta de Confiança</h3>
+          <p>Seu site parece amador e afasta clientes antes mesmo do primeiro contacto.</p>
+        </div>
+        <div class="card animate delay-2">
+          <h3>Divulgação sem Retorno</h3>
+          <p>Você posta nas redes, mas ninguém entra em contacto ou marca atendimento.</p>
+        </div>
+        <div class="card animate delay-3">
+          <h3>Perda de Oportunidades</h3>
+          <p>Visitantes entram, mas saem porque não entendem seus serviços ou valores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="imagem-destaque"></section>
+  <!-- Solução -->
+  <section class="solucao">
+    <div class="container">
+      <h2 class="animate">A MultSev Solução Digital resolve isso para você</h2>
+      <p class="animate delay-1">Nós criamos sites profissionais, modernos e persuasivos — feitos para gerar mensagens reais no seu WhatsApp.</p>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="https://wa.me/244952805504" class="btn-whatsapp" target="_blank">Quero meu site profissional</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefícios -->
+  <section class="beneficios">
+    <div class="container">
+      <h2 class="animate">O que seu novo site terá:</h2>
+      <ul>
+        <li class="animate delay-1">Design profissional e moderno</li>
+        <li class="animate delay-2">Totalmente adaptado ao celular</li>
+        <li class="animate delay-3">Gera mais mensagens e leads qualificados</li>
+        <li class="animate delay-4">Passa credibilidade imediata</li>
+        <li class="animate delay-5">Rápido, intuitivo e focado em conversão</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Exemplos -->
+  <section class="exemplos">
+    <div class="container">
+      <h2 class="animate">Exemplos de Sites</h2>
+      <div class="exemplos-note animate delay-1">
+        ⚠️ Estes são exemplos demonstrativos.<br>
+        Cada site é criado de acordo com o pedido, objetivo e identidade do cliente.
+      </div>
+      <div class="exemplos-grid">
+     <a href="https://cs-sd1.github.io/clinica/" target="_blank" class="exemplo-item animate delay-1">
+    Clínica Médica
+</a>
+
+<a href="https://multsevsolucaodigital.github.io/" target="_blank" class="exemplo-item animate delay-2">
+    Apresentação de serviços
+</a>
+    </div>
+  </section>
+
+  <!-- Para Quem É / Não É -->
+  <section class="para-quem">
+    <div class="container">
+      <h2 class="animate">Para quem é (e não é)</h2>
+      <div class="publico">
+        <div class="publico-card sim animate delay-1">
+          <h3>✅ Ideal para:</h3>
+          <p>• Pequenos negócios<br>• Clínicas, lojas, prestadores de serviço<br>• Empreendedores sérios</p>
+        </div>
+        <div class="publico-card nao animate delay-2">
+          <h3>❌ Não indicado para:</h3>
+          <p>• Quem quer algo grátis<br>• Quem não leva o negócio a sério</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-final">
+    <div class="container">
+      <h2 class="animate">Transforme sua presença online hoje.</h2>
+      <a href="https://wa.me/244952805504" class="btn-whatsapp" target="_blank">Quero meu site profissional</a>
+    </div>
+  </section>
+
+  <!-- JavaScript para animações suaves -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      document.querySelectorAll('.animate').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Garantir que o hero apareça imediatamente
+      setTimeout(() => {
+        document.querySelectorAll('.hero .animate').forEach((el, i) => {
+          setTimeout(() => el.classList.add('visible'), i * 300);
+        });
+      }, 200);
+    });
+  </script>
+
+</body>
+</html>
