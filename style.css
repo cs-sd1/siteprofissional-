@@ -1,0 +1,288 @@
+/* ========================================
+   LUX DIGITAL - STYLE.CSS
+   Modern, Elegant & Dynamic Design
+   ======================================== */
+
+/* Import Google Fonts for Premium Typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
+/* ========================================
+   Global Styles & Reset
+   ======================================== */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f4ff 0%, #fdf0f7 50%, #e8f4f8 100%);
+}
+
+/* ========================================
+   Animations & Effects
+   ======================================== */
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+    animation: float 3.5s ease-in-out infinite;
+}
+
+/* Fade In Left Animation */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fadeInLeft {
+    animation: fadeInLeft 1s ease-out;
+}
+
+/* Slide In From Top Animation */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideInDown {
+    animation: slideInDown 0.8s ease-out;
+}
+
+/* Pulse Glow Effect */
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(147, 51, 234, 0.6); }
+}
+
+.pulse-glow {
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* ========================================
+   Custom Buttons & Components
+   ======================================== */
+
+/* Primary Button Style with Glow */
+.btn-primary {
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.5);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+/* Navbar Button Hover */
+.nav-btn {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Service Cards Hover Effect */
+.service-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    border-color: #8b5cf6;
+}
+
+/* Input Fields Focus */
+input:focus, textarea:focus {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Scrollbar Styling for Premium Look */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #f0f4ff 0%, #fdf0f7 100%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8b5cf6 0%, #ec4899 100%);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #7c3aed 0%, #db2777 100%);
+}
+
+/* ========================================
+   Hero Section Styles
+   ======================================== */
+#home h2 {
+    text-shadow: 2px 4px 12px rgba(147, 51, 234, 0.2);
+}
+
+#home .grid > div:first-child {
+    transition: all 0.6s ease-out;
+}
+
+/* ========================================
+   Section Transitions
+   ======================================== */
+.section {
+    transition: all 0.5s ease-in-out;
+}
+
+/* ========================================
+   Background Gradients for Sections
+   ======================================== */
+#about .bg-gradient-to-r {
+    background: linear-gradient(90deg, #7c3aed 0%, #ec4899 50%, #06b6d4 100%);
+    box-shadow: 0 10px 50px rgba(147, 51, 234, 0.4);
+}
+
+/* ========================================
+   Contact Form Styling
+   ======================================== */
+#contact-form {
+    box-shadow: 0 15px 60px rgba(147, 51, 234, 0.25);
+}
+
+#contact-form button {
+    background: linear-gradient(135deg, #7c3aed 0%, #ec4899 50%, #06b6d4 100%);
+    background-size: 200% 100%;
+    transition: background-position 0.4s ease;
+}
+
+#contact-form button:hover {
+    background-position: 100% 0;
+}
+
+/* ========================================
+   Responsive Adjustments
+   ======================================== */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav {
+        backdrop-filter: blur(8px);
+    }
+    
+    nav h1 {
+        font-size: 1.5rem;
+    }
+    
+    #home h2 {
+        font-size: 2.5rem;
+    }
+    
+    #about, #services, #contact {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .grid {
+        gap: 1.5rem !important;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    #home {
+        padding-top: 2rem;
+    }
+    
+    #home h2 {
+        font-size: 3rem;
+    }
+}
+
+/* ========================================
+   Loading & Preloader Effects (Optional)
+   ======================================== */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner {
+    border-top-color: #8b5cf6;
+    animation: spin 0.8s linear infinite;
+}
+
+/* ========================================
+   Card Hover Effects Enhancement
+   ======================================== */
+.service-card i {
+    transition: all 0.3s ease-in-out;
+}
+
+.service-card:hover i {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* ========================================
+   Text Gradient Animations
+   ======================================== */
+@keyframes gradientText {
+    0%, 100% { 
+        background-position: 0% 50%; 
+    }
+    50% { 
+        background-position: 100% 50%; 
+    }
+}
+
+.text-gradient-animate {
+    background: linear-gradient(-45deg, #8b5cf6, #ec4899, #06b6d4, #10b981);
+    background-size: 400% 400%;
+    animation: gradientText 3s ease infinite;
+}
+
+/* ========================================
+   Footer Styles
+   ======================================== */
+footer {
+    background: linear-gradient(135deg, #4c1d95 0%, #be123c 50%, #083344 100%);
+}
+
+footer a:hover {
+    transform: translateY(-3px) scale(1.15);
+}
+
+/* Social Media Icons Hover */
+footer i {
+    transition: all 0.3s ease-in-out;
+}
+
+footer i:hover {
+    filter: brightness(1.3);
+}
