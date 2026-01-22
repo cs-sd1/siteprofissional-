@@ -291,3 +291,31 @@ footer i {
 footer i:hover {
     filter: brightness(1.3);
 }
+.service-video {
+  margin-top: 20px;
+}
+
+.service-video video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Botão no mesmo estilo do site */
+.service-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 22px;
+  background-color: #005eff; /* mesma linha visual do site */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.service-btn:hover {
+  background-color: #0046c7;
+}
+.marketing-img {
+  max-height: 220px;
+}
