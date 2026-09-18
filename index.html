@@ -1,341 +1,580 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-AO">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberNova Solução - Serviços Digitais Premium</title>
-    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- =====================================================================
+     KUWANDE ANGOLA, LDA. | index.html
+
+     Estrutura da página. Os textos que mudam com frequência (contactos,
+     compromissos, áreas, processo, motivos, perguntas e edições dos
+     cursos) editam-se no topo do ficheiro script.js.
+
+     O texto escrito aqui no HTML é uma cópia de segurança: é o que as
+     pessoas vêem se o JavaScript falhar. Quando o JavaScript funciona,
+     manda o script.js. Se mudar um texto no script.js, mude também aqui
+     para as duas versões ficarem iguais.
+     ===================================================================== -->
+
+<title>Kuwande Angola, Lda. | Formação, produção agropecuária e consultoria no Lubango</title>
+<meta name="description" content="Empresa do Lubango, Huíla, com formação profissional prática, produção agropecuária, consultoria e projectos, e comércio de material e equipamento para o campo.">
+<meta name="theme-color" content="#0B3D2A">
+
+<!-- PARTILHAS NO WHATSAPP E REDES SOCIAIS
+     Quando o site tiver domínio próprio, troque "imagens/hero.jpg" pelo
+     endereço completo (exemplo: https://o-seu-dominio.ao/imagens/hero.jpg).
+     O WhatsApp só mostra a imagem com o endereço completo.
+     Tamanho ideal da imagem: 1200 x 630 píxeis. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_AO">
+<meta property="og:site_name" content="Kuwande Angola, Lda.">
+<meta property="og:title" content="Kuwande Angola, Lda. | Atitudes que geram valor">
+<meta property="og:description" content="Formação prática, produção agropecuária, consultoria e comércio de equipamento no Lubango, Huíla.">
+<meta property="og:image" content="imagens/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kuwande Angola, Lda. | Atitudes que geram valor">
+<meta name="twitter:description" content="Formação prática, produção agropecuária, consultoria e comércio de equipamento no Lubango, Huíla.">
+<meta name="twitter:image" content="imagens/hero.jpg">
+
+<!-- TIPOS DE LETRA (Google Fonts): Barlow Condensed para títulos,
+     Source Sans 3 para o texto. Se não carregarem, o style.css tem
+     letras do sistema de recurso. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&amp;family=Source+Sans+3:wght@400;600&amp;display=swap">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- DADOS ESTRUTURADOS (para o Google perceber quem é a empresa).
+     Quando tiver domínio, pode acrescentar "url" e "logo" com endereços completos. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Kuwande Angola, Lda.",
+  "description": "Comércio e prestação de serviços: formação profissional, produção agropecuária, consultoria e projectos, comércio de material e equipamento.",
+  "slogan": "Atitudes que geram valor",
+  "telephone": "+244974477016",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lubango",
+    "addressRegion": "Huíla",
+    "addressCountry": "AO"
+  },
+  "areaServed": "Huíla, Angola"
+}
+</script>
+
+<!-- O script fica no topo de propósito: a primeira linha marca a página
+     com a classe "js" antes de aparecer, para as animações de entrada não
+     piscarem. Tudo o resto só arranca quando a página acabar de carregar. -->
+<script src="script.js"></script>
 </head>
-<body class="bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-purple-200 shadow-lg">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <h1 class="text-2xl md:text-3xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
-                    <i class="fas fa-crown mr-2"></i>CyberNova Solução
-                </h1>
-                
-                <div class="flex items-center gap-6">
-                    <button id="nav-home" class="nav-btn px-4 py-2 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md">
-                        <i class="fas fa-home mr-2"></i>Home
-                    </button>
-                    <button id="nav-about" class="nav-btn px-4 py-2 rounded-full font-semibold transition-all duration-300 bg-white text-purple-700 border-2 border-purple-200">
-                        <i class="fas fa-gem mr-2"></i>Sobre
-                    </button>
-                    <button id="nav-services" class="nav-btn px-4 py-2 rounded-full font-semibold transition-all duration-300 bg-white text-purple-700 border-2 border-purple-200">
-                        <i class="fas fa-briefcase mr-2"></i>Serviços
-                    </button>
-                    <button id="nav-contact" class="nav-btn px-4 py-2 rounded-full font-semibold transition-all duration-300 bg-white text-purple-700 border-2 border-purple-200">
-                        <i class="fas fa-envelope mr-2"></i>Contato
-                    </button>
-                </div>
-            </div>
-        </div>
+
+<body>
+
+<!-- LIGAÇÃO DE SALTO: aparece ao carregar em Tab, para quem navega pelo teclado -->
+<a class="salto" href="#conteudo">Saltar para o conteúdo</a>
+
+<!-- =====================================================================
+     ÍCONES
+     Todos os ícones do site estão desenhados aqui, uma única vez.
+     Usam-se com <svg class="ico"><use xlink:href="#i-nome"></use></svg>
+     Nomes disponíveis: folha, livro, prancheta, caixa, espiga, certificado,
+     relogio, terreno, calculadora, conversa, pessoas, pessoa, escudo, pin,
+     telefone, email, calendario, whatsapp, seta, check, fechar, mais,
+     anterior, seguinte, moeda, alvo, lupa
+     ===================================================================== -->
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false">
+  <symbol id="i-folha" viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4.4 3.2-7.5 8-7.5 0 5-3.4 8.2-8 7.5z"/><path d="M12 14.5c0-3.4-2.6-6-7-6 0 4 2.7 6.4 7 6z"/></symbol>
+  <symbol id="i-livro" viewBox="0 0 24 24"><path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H19v14H7.5A2.5 2.5 0 0 0 5 19.5z"/><path d="M5 19.5A2.5 2.5 0 0 0 7.5 22H19v-5"/><path d="M9 7.5h6M9 10.5h4"/></symbol>
+  <symbol id="i-prancheta" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2.8h6V4"/><path d="M8.5 13l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-caixa" viewBox="0 0 24 24"><path d="M3 7.5l9-4.5 9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5L12 12l9-4.5M12 12v9"/><path d="M7.5 5.3l9 4.5"/></symbol>
+  <symbol id="i-espiga" viewBox="0 0 24 24"><path d="M12 22V7.5"/><path d="M12 7.5C10 6.6 9 4.8 9 2.8c1.9.2 3 1.5 3 3.2 0-1.7 1.1-3 3-3.2 0 2-1 3.8-3 4.7z"/><path d="M12 13c-2.4-.4-4-2-4.5-4.2 2 0 3.5.8 4.5 2 1-1.2 2.5-2 4.5-2-.5 2.2-2.1 3.8-4.5 4.2z"/><path d="M12 18.2c-2.4-.4-4-2-4.5-4.2 2 0 3.5.8 4.5 2 1-1.2 2.5-2 4.5-2-.5 2.2-2.1 3.8-4.5 4.2z"/></symbol>
+  <symbol id="i-certificado" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><circle cx="12" cy="9" r="2"/><path d="M8.8 13.5L7.5 21.5l4.5-2.3 4.5 2.3-1.3-8"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+  <symbol id="i-terreno" viewBox="0 0 24 24"><path d="M2.5 20.5h19"/><path d="M4.5 20.5V11L10 7l5.5 4v9.5"/><path d="M8 20.5v-5h4v5"/><path d="M15.5 13.5l3-2 3 2v7"/></symbol>
+  <symbol id="i-calculadora" viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8.5 6.5h7"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01M8.5 15h.01M12 15h.01M15.5 15h.01M8.5 18.5h.01M12 18.5h.01M15.5 18.5h.01"/></symbol>
+  <symbol id="i-conversa" viewBox="0 0 24 24"><path d="M4 4.5h16v11.5H10l-6 4.5z"/><path d="M8 8.5h8M8 12h5"/></symbol>
+  <symbol id="i-pessoas" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 20c0-3.6 2.8-6.2 6.2-6.2s6.2 2.6 6.2 6.2"/><circle cx="17" cy="9" r="2.6"/><path d="M16.2 14c2.9.2 5 2.4 5 5.5"/></symbol>
+  <symbol id="i-pessoa" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7.5 8-7.5s8 3.1 8 7.5"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 2.8l8 3v6.2c0 5-3.4 8.2-8 9.2-4.6-1-8-4.2-8-9.2V5.8z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s7-6.4 7-12.1a7 7 0 0 0-14 0c0 5.7 7 12.1 7 12.1z"/><circle cx="12" cy="9.4" r="2.6"/></symbol>
+  <symbol id="i-telefone" viewBox="0 0 24 24"><path d="M5.2 3.5h3.6l1.9 4.8-2.4 1.5a11.5 11.5 0 0 0 5.9 5.9l1.5-2.4 4.8 1.9v3.6a2 2 0 0 1-2.1 2A16.9 16.9 0 0 1 3.2 5.6a2 2 0 0 1 2-2.1z"/></symbol>
+  <symbol id="i-email" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 12.5l8.5-6"/></symbol>
+  <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16.5" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4.1a8.6 8.6 0 1 1 3.1 3z"/><path d="M9.3 8.3c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.1.2-.1.4 0 .5.6 1.1 1.5 2 2.6 2.6.2.1.4.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.7.8c.2.1.3.3.3.5v.4c0 .4-.2.9-.6 1.1-.6.3-1.6.5-3-.1-2-.8-3.8-2.6-4.6-4.6-.5-1.3-.3-2.5 0-3.2z"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-anterior" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-seguinte" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-moeda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.2c-.5-.9-1.6-1.4-3-1.4-1.7 0-3 .9-3 2.2 0 3 6 1.6 6 4.5 0 1.3-1.3 2.2-3 2.2-1.4 0-2.6-.6-3-1.5M12 6v12"/></symbol>
+  <symbol id="i-alvo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+  <symbol id="i-lupa" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20.5 20.5l-4.9-4.9"/></symbol>
+</svg>
+
+
+<!-- =====================================================================
+     3.1 BARRA DE NAVEGAÇÃO
+     ===================================================================== -->
+<header class="topo" id="topo">
+  <div class="contentor barra">
+
+    <!-- Logotipo. Se imagens/logotipo.jpg faltar, aparece o nome em texto. -->
+    <a class="marca" href="#inicio" aria-label="Kuwande Angola, Lda., voltar ao início">
+      <img class="marca__img" src="imagens/logotipo.jpg" alt="Kuwande Angola, Lda." height="48" onerror="this.parentNode.className+=' marca--sem-logo'">
+      <span class="marca__texto" aria-hidden="true">
+        <span class="marca__nome">Kuwande</span>
+        <span class="marca__sub">Angola, Lda.</span>
+      </span>
+    </a>
+
+    <!-- Véu escuro por trás do menu no telemóvel -->
+    <div class="veu" id="veu-menu" aria-hidden="true"></div>
+
+    <!-- Menu. Os itens "Galeria" e "Testemunhos" começam escondidos
+         e só aparecem quando essas secções tiverem conteúdo. -->
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <ul class="menu__lista">
+        <li><a href="#quem-somos">Quem somos</a></li>
+        <li><a href="#areas">Áreas</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li data-menu="galeria" hidden><a href="#galeria">Galeria</a></li>
+        <li data-menu="testemunhos" hidden><a href="#testemunhos">Testemunhos</a></li>
+        <li><a href="#perguntas">Perguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li class="menu__cta"><a class="botao botao--accao" data-whatsapp href="https://wa.me/244974477016"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-whatsapp"></use></svg>Falar pelo WhatsApp</a></li>
+      </ul>
     </nav>
 
-    <!-- Main Content -->
-    <main class="pt-24 pb-16">
-        <!-- Home Section -->
-        <section id="home" class="section container mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-8 animate-fadeInLeft">
-                    <h2 class="text-5xl md:text-6xl font-black leading-tight bg-gradient-to-r from-purple-700 via-pink-700 to-indigo-700 bg-clip-text text-transparent">
-                        Transforme Sua Presença Digital com
-                        <span class="block bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 bg-clip-text text-transparent">Elegância e Tecnologia</span>
-                    </h2>
-                    <p class="text-xl text-gray-700 leading-relaxed">
-                        Serviços digitais premium que combinam design sofisticado, performance excepcional e resultados impactantes. Eleve sua marca ao próximo nível.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <button id="explore-btn" class="btn-primary px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 shadow-2xl">
-                            Explore Nossos Serviços <i class="fas fa-arrow-right ml-3"></i>
-                        </button>
-                        <button id="contact-btn" class="px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 bg-white text-purple-700 border-2 border-purple-300 shadow-lg">
-                            <i class="fas fa-comment mr-2"></i>Fale Conosco
-                        </button>
-                    </div>
-                    
-                    <div class="grid grid-cols-3 gap-6 pt-8">
-                        <div class="text-center p-4 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl border border-purple-200">
-                            <i class="fas fa-award text-4xl bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-2"></i>
-                            <h3 class="text-2xl font-bold text-purple-700">500+</h3>
-                            <p class="text-sm text-gray-600">Projetos Concluídos</p>
-                        </div>
-                        <div class="text-center p-4 bg-gradient-to-br from-pink-100 to-indigo-100 rounded-2xl border border-pink-200">
-                            <i class="fas fa-users text-4xl bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent mb-2"></i>
-                            <h3 class="text-2xl font-bold text-pink-700">400+</h3>
-                            <p class="text-sm text-gray-600">Clientes Satisfeitos</p>
-                        </div>
-                        <div class="text-center p-4 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl border border-indigo-200">
-                            <i class="fas fa-star text-4xl bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent mb-2"></i>
-                            <h3 class="text-2xl font-bold text-indigo-700">98%</h3>
-                            <p class="text-sm text-gray-600">Avaliações Positivas</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="animate-float">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" 
-                         alt="Digital Services Premium" 
-                         class="w-full rounded-3xl shadow-2xl border-4 border-white">
-                </div>
-            </div>
-        </section>
+    <div class="barra__accoes">
+      <!-- Botão de contacto sempre visível -->
+      <a class="botao botao--accao botao--pequeno topo__cta" data-whatsapp href="https://wa.me/244974477016">
+        <svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-whatsapp"></use></svg>
+        <span class="topo__cta-longo">Falar connosco</span><span class="topo__cta-curto">Contactar</span>
+      </a>
+      <!-- Botão hambúrguer (só em ecrãs estreitos) -->
+      <button class="hamburguer" id="botao-menu" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="hamburguer__barra"></span>
+        <span class="hamburguer__barra"></span>
+        <span class="hamburguer__barra"></span>
+      </button>
+    </div>
 
-        <!-- About Section -->
-        <section id="about" class="section container mx-auto px-6 py-12">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-5xl font-black text-center mb-12 bg-gradient-to-r from-purple-700 to-pink-700 bg-clip-text text-transparent">
-                    <i class="fas fa-bolt mr-3"></i>Sobre CyberNova Solução
-                </h2>
-                
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                    <div class="p-8 bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl border border-purple-200 shadow-lg hover:shadow-2xl transition-all duration-300">
-                        <i class="fas fa-lightbulb text-5xl text-yellow-500 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-purple-800 mb-3">Visão</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Ser referência global em serviços digitais premium, transformando ideias em experiências memoráveis.
-                        </p>
-                    </div>
-                    
-                    <div class="p-8 bg-gradient-to-br from-pink-50 to-pink-100 rounded-3xl border border-pink-200 shadow-lg hover:shadow-2xl transition-all duration-300">
-                        <i class="fas fa-heart text-5xl text-pink-600 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-pink-800 mb-3">Missão</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Criar soluções digitais elegantes, funcionais e impactantes que impulsionem o sucesso de nossos clientes.
-                        </p>
-                    </div>
-                    
-                    <div class="p-8 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-3xl border border-indigo-200 shadow-lg hover:shadow-2xl transition-all duration-300">
-                        <i class="fas fa-rocket text-5xl text-indigo-600 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-indigo-800 mb-3">Valores</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Excelência, inovação, transparência e compromisso com resultados extraordinários.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 p-10 rounded-3xl text-white shadow-2xl">
-                    <h3 class="text-3xl font-bold mb-4 flex items-center gap-2">
-                        <i class="fas fa-palette"></i>Design com Elegância
-                    </h3>
-                    <p class="text-lg leading-relaxed opacity-95">
-                        Cada projeto é pensado para refletir a identidade única da marca, combinando estética contemporânea com funcionalidade intuitiva. 
-                        Utilizamos cores vibrantes, tipografias sofisticadas e elementos fluidos que capturam a atenção e geram engajamento.
-                    </p>
-                </div>
-            </div>
-        </section>
+  </div>
+</header>
 
-        <!-- Services Section -->
-        <section id="services" class="section container mx-auto px-6 py-12">
-            <h2 class="text-5xl font-black text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-pink-700 to-indigo-700">
-                Nossos Serviços Premium
-            </h2>
-            <p class="text-xl text-center text-gray-700 mb-12">Transformando conceitos em realidade digital</p>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                <!-- Service Card 1 -->
-                <div class="service-card bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 border border-purple-200 shadow-xl hover:shadow-2xl transition-all duration-300">
-                    <i class="fas fa-laptop-code text-5xl text-purple-600 mb-4"></i>
-                    <h3 class="text-2xl font-bold text-purple-800 mb-3">Desenvolvimento Web</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Sites e aplicações web responsivas, otimizadas para performance e com design premium que impressiona e converte.
-                    </p>
-                    <ul class="text-gray-700 mb-6 space-y-2">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i>Design Responsivo</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i>Velocidade e SEO</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i>Experiência Única</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-purple-700 text-white font-semibold transition-all duration-300 hover:shadow-lg">
-                        Saiba Mais <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-                
-                <!-- Service Card 2 -->
-                <div class="service-card bg-gradient-to-br from-pink-50 to-indigo-50 rounded-3xl p-8 border border-pink-200 shadow-xl hover:shadow-2xl transition-all duration-300">
-                    <i class="fas fa-mobile-alt text-5xl text-pink-600 mb-4"></i>
-                    <h3 class="text-2xl font-bold text-pink-800 mb-3">Aplicativos Móveis</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Aplicativos iOS e Android com interface elegante, navegação intuitiva e performance excepcional.
-                    </p>
-                    <ul class="text-gray-700 mb-6 space-y-2">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i>UI/UX Premium</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i>Rapidez</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i>Segurança</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-600 to-pink-700 text-white font-semibold transition-all duration-300 hover:shadow-lg">
-                        Saiba Mais <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-                
-                <div class="service-card bg-gradient-to-br from-pink-50 to-indigo-50 rounded-3xl p-8 border border-pink-200 shadow-xl hover:shadow-2xl transition-all duration-300">
-                  <i class="fas fa-mobile-alt text-5xl text-pink-600 mb-4"></i>
-                    <h3 class="text-2xl font-bold text-pink-800 mb-3">Design & Edição de Vídeos</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Trabalho com <strong>design gráfico profissional</strong>, criando identidades visuais,
-    artes para redes sociais, banners, logotipos e materiais modernos que fortalecem
-    marcas e negócios.
-  </p>
 
-  <p>
-    Também realizo <strong>edição de vídeos</strong>, produzindo conteúdos visuais criativos,
-    bem estruturados e adaptados para redes sociais e projetos digitais.
-  </p>
-                    </p>
+<main id="conteudo">
 
-  <a
-    href="https://wa.me/244959622160?text=Olá!%20Gostaria%20de%20solicitar%20um%20serviço%20de%20Design%20ou%20Edição%20de%20Vídeo."
-    target="_blank"
-    class="service-btn">
-    Solicitar Serviço
+<!-- =====================================================================
+     3.2 HERO
+     O fundo é feito só com CSS. A fotografia imagens/hero.jpg é opcional:
+     se não existir, é retirada e o fundo continua completo.
+     ===================================================================== -->
+<section class="hero" id="inicio" aria-labelledby="hero-titulo">
+  <div class="hero__fundo" aria-hidden="true">
+    <span class="hero__aureola hero__aureola--1"></span>
+    <span class="hero__aureola hero__aureola--2"></span>
+    <span class="hero__trama"></span>
+  </div>
+  <img class="hero__foto" src="imagens/hero.jpg" alt="Trabalho no campo na região do Lubango, Huíla" onerror="this.parentNode.removeChild(this)">
+  <div class="hero__veu" aria-hidden="true"></div>
+
+  <div class="contentor hero__conteudo">
+    <p class="etiqueta">Lubango, Huíla · Angola</p>
+    <h1 class="hero__titulo" id="hero-titulo">Formação e apoio prático para quem vive do campo</h1>
+    <p class="hero__texto">Somos uma empresa do Lubango que ensina, produz e aconselha. Trabalhamos com criadores, técnicos, iniciantes e pequenos empresários que querem fazer as coisas com método e sem desperdício.</p>
+    <div class="hero__botoes">
+      <a class="botao botao--accao" data-whatsapp href="https://wa.me/244974477016">
+        <svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-whatsapp"></use></svg>Falar pelo WhatsApp
+      </a>
+      <a class="botao botao--contorno" href="#areas">Ver o que fazemos</a>
+    </div>
+    <p class="slogan" data-campo="slogan">Atitudes que geram valor</p>
+  </div>
+
+  <a class="hero__rolar" href="#compromissos" aria-label="Descer para o conteúdo">
+    <span class="hero__rato"><span class="hero__roda"></span></span>
   </a>
+  <div class="tricolor" aria-hidden="true"></div>
+</section>
 
-  <div class="service-video">
-    <video controls preload="metadata">
-      <source src="design.mp4" type="video/mp4">
-      Seu navegador não suporta vídeo.
-    </video>
+
+<!-- =====================================================================
+     3.3 FAIXA DE COMPROMISSOS
+     Texto editável em COMPROMISSOS, no script.js.
+     ===================================================================== -->
+<section class="compromissos" id="compromissos" aria-labelledby="compromissos-titulo">
+  <div class="contentor">
+    <h2 class="so-leitor" id="compromissos-titulo">Os nossos compromissos</h2>
+    <ul class="compromissos__lista grelha grelha--4" data-render="compromissos">
+      <li class="compromisso revelar"><svg class="ico compromisso__icone" aria-hidden="true" focusable="false"><use xlink:href="#i-conversa"></use></svg><div><h3 class="compromisso__titulo">Linguagem simples</h3><p>Explicamos com palavras do dia a dia. Termos técnicos só quando fazem falta, e sempre explicados.</p></div></li>
+      <li class="compromisso revelar"><svg class="ico compromisso__icone" aria-hidden="true" focusable="false"><use xlink:href="#i-terreno"></use></svg><div><h3 class="compromisso__titulo">Prática no terreno</h3><p>O que se aprende na sala vê-se e faz-se numa exploração a funcionar.</p></div></li>
+      <li class="compromisso revelar"><svg class="ico compromisso__icone" aria-hidden="true" focusable="false"><use xlink:href="#i-calculadora"></use></svg><div><h3 class="compromisso__titulo">Contas claras</h3><p>Mostramos os custos reais antes de começar, para decidir com os pés no chão.</p></div></li>
+      <li class="compromisso revelar"><svg class="ico compromisso__icone" aria-hidden="true" focusable="false"><use xlink:href="#i-pessoas"></use></svg><div><h3 class="compromisso__titulo">Acompanhamento</h3><p>Depois da formação ou do serviço, continuamos disponíveis para as dúvidas que aparecem.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     3.4 QUEM SOMOS
+     A imagem imagens/quem-somos.jpg é opcional. Sem ela, a moldura
+     mostra a trama da marca e o slogan.
+     ===================================================================== -->
+<section class="seccao" id="quem-somos" aria-labelledby="quem-titulo">
+  <div class="contentor duas-colunas">
+    <div class="duas-colunas__texto">
+      <h2 class="revelar" id="quem-titulo">Uma empresa jovem, com os pés na Huíla</h2>
+      <p class="introducao revelar">A Kuwande Angola, Lda. é uma empresa do Lubango, legalmente constituída, que trabalha em comércio e prestação de serviços ligados ao campo.</p>
+      <p class="revelar">Somos novos, e isso joga a nosso favor. Conhecemos as dificuldades de quem está a começar porque também estamos a construir o nosso caminho. Respondemos depressa, adaptamo-nos a cada caso e não vendemos fórmulas mágicas.</p>
+
+      <ul class="pilares">
+        <li class="pilar revelar"><h3>Proximidade</h3><p>Estamos no Lubango e trabalhamos com gente da região. Conhecemos o terreno porque andamos nele.</p></li>
+        <li class="pilar revelar"><h3>Rigor</h3><p>Cada recomendação tem uma razão e um número por trás. Não trabalhamos por palpite.</p></li>
+        <li class="pilar revelar"><h3>Utilidade</h3><p>Só ensinamos e propomos o que se pode aplicar amanhã, com os meios que existem cá.</p></li>
+      </ul>
+    </div>
+
+    <div class="duas-colunas__imagem revelar">
+      <div class="moldura moldura--retrato">
+        <img src="imagens/quem-somos.jpg" alt="Equipa da Kuwande Angola a trabalhar no terreno, no Lubango" loading="lazy" onerror="this.parentNode.className+=' moldura--vazia';this.parentNode.removeChild(this)">
+        <p class="moldura__legenda" aria-hidden="true">Atitudes que geram valor</p>
+      </div>
+      <ul class="numeros">
+        <li><span class="numeros__valor"><span class="contador" data-alvo="4">4</span></span><span class="numeros__rotulo">áreas de actuação</span></li>
+        <li><span class="numeros__valor"><span class="contador" data-alvo="4">4</span></span><span class="numeros__rotulo">passos em cada projecto</span></li>
+        <li><span class="numeros__valor"><span class="contador" data-alvo="2">2</span>h</span><span class="numeros__rotulo">por sessão de formação</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     3.5 ÁREAS DE ACTUAÇÃO
+     Texto editável em AREAS, no script.js.
+     ===================================================================== -->
+<section class="seccao seccao--clara" id="areas" aria-labelledby="areas-titulo">
+  <div class="contentor">
+    <div class="cabecalho">
+      <h2 class="revelar" id="areas-titulo">O que fazemos</h2>
+      <p class="introducao revelar">Quatro áreas que se completam. Pode precisar só de uma, ou de todas ao longo do caminho.</p>
+    </div>
+    <div class="grelha grelha--areas" data-render="areas">
+      <article class="area revelar"><div class="area__icone"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-livro"></use></svg></div><h3>Formação profissional</h3><p>Cursos práticos para quem quer começar ou melhorar uma actividade no campo.</p><ul class="lista-check"><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Cursos intensivos de curta duração</li><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Aulas na sala e prática no terreno</li><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Manual de apoio e certificado</li></ul></article>
+      <article class="area revelar"><div class="area__icone"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-espiga"></use></svg></div><h3>Produção agropecuária</h3><p>Produzimos e acompanhamos actividades agrícolas e de criação animal na região.</p><ul class="lista-check"><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Criação animal, com foco em aves</li><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Produção agrícola adaptada ao clima da Huíla</li><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Boas práticas de maneio e sanidade</li></ul></article>
+      <article class="area revelar"><div class="area__icone"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-prancheta"></use></svg></div><h3>Consultoria e projectos</h3><p>Ajudamos a planear antes de investir, para evitar erros que saem caros.</p><ul class="lista-check"><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Estudos de viabilidade simples</li><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Planos de instalação e de produção</li><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Orçamentos e cálculo de custos</li></ul></article>
+      <article class="area revelar"><div class="area__icone"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-caixa"></use></svg></div><h3>Comércio de material e equipamento</h3><p>Fornecemos material e equipamento para explorações agrícolas e pecuárias.</p><ul class="lista-check"><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Equipamento para aviários</li><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Material de apoio à produção</li><li><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-check"></use></svg>Ajuda a escolher o que comprar</li></ul></article>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     3.6 COMO TRABALHAMOS
+     Texto editável em PROCESSO, no script.js. A linha dourada desenha-se
+     à medida que a pessoa desce na página.
+     ===================================================================== -->
+<section class="seccao seccao--escura" id="processo" aria-labelledby="processo-titulo">
+  <div class="contentor">
+    <div class="cabecalho">
+      <h2 class="revelar" id="processo-titulo">Como trabalhamos</h2>
+      <p class="introducao revelar">Seja um curso, um projecto ou uma compra, o caminho é sempre o mesmo. Assim sabe sempre em que ponto está.</p>
+    </div>
+    <div class="passos-caixa">
+      <div class="passos__linha" aria-hidden="true"><span class="passos__preenchimento" id="linha-processo"></span></div>
+      <ol class="passos" data-render="processo">
+        <li class="passo revelar"><span class="passo__numero"><span>1</span></span><div><h3>Ouvimos</h3><p>Conversamos consigo para perceber o que tem, o que quer fazer e com que meios conta.</p></div></li>
+        <li class="passo revelar"><span class="passo__numero"><span>2</span></span><div><h3>Analisamos</h3><p>Vemos o terreno, os números e as opções. Dizemos com franqueza o que faz sentido.</p></div></li>
+        <li class="passo revelar"><span class="passo__numero"><span>3</span></span><div><h3>Propomos</h3><p>Apresentamos um plano claro, com passos, prazos e custos por escrito.</p></div></li>
+        <li class="passo revelar"><span class="passo__numero"><span>4</span></span><div><h3>Acompanhamos</h3><p>Executamos ou ensinamos a executar, e ficamos por perto nas primeiras dúvidas.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     3.7 PORQUÊ A KUWANDE
+     Texto editável em MOTIVOS, no script.js.
+     ===================================================================== -->
+<section class="seccao" id="porque" aria-labelledby="porque-titulo">
+  <div class="contentor">
+    <div class="cabecalho">
+      <h2 class="revelar" id="porque-titulo">Porquê a Kuwande</h2>
+      <p class="introducao revelar">Seis razões concretas para trabalhar connosco.</p>
+    </div>
+    <ul class="grelha grelha--motivos" data-render="motivos">
+      <li class="motivo revelar"><svg class="ico motivo__icone" aria-hidden="true" focusable="false"><use xlink:href="#i-pin"></use></svg><div><h3>Somos do Lubango</h3><p>Conhecemos o clima, os mercados e as pessoas da Huíla.</p></div></li>
+      <li class="motivo revelar"><svg class="ico motivo__icone" aria-hidden="true" focusable="false"><use xlink:href="#i-conversa"></use></svg><div><h3>Explicamos sem complicar</h3><p>Linguagem clara, pensada para quem está a começar.</p></div></li>
+      <li class="motivo revelar"><svg class="ico motivo__icone" aria-hidden="true" focusable="false"><use xlink:href="#i-terreno"></use></svg><div><h3>Mãos na terra</h3><p>A teoria serve a prática. Aprende-se a fazer, fazendo.</p></div></li>
+      <li class="motivo revelar"><svg class="ico motivo__icone" aria-hidden="true" focusable="false"><use xlink:href="#i-calculadora"></use></svg><div><h3>Números à vista</h3><p>Custos explicados antes de qualquer compromisso.</p></div></li>
+      <li class="motivo revelar"><svg class="ico motivo__icone" aria-hidden="true" focusable="false"><use xlink:href="#i-escudo"></use></svg><div><h3>Franqueza</h3><p>Se uma ideia não compensa, dizemos. Preferimos perder um negócio a enganar alguém.</p></div></li>
+      <li class="motivo revelar"><svg class="ico motivo__icone" aria-hidden="true" focusable="false"><use xlink:href="#i-relogio"></use></svg><div><h3>Resposta rápida</h3><p>Atendemos pelo WhatsApp e procuramos responder no mesmo dia útil.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     3.8 FORMAÇÃO
+     O método está sempre visível. Os cartões das edições só aparecem se
+     existirem edições em EDICOES, no script.js. Se não houver cursos com
+     inscrições abertas, aparece o convite para deixar contacto.
+     ===================================================================== -->
+<section class="seccao seccao--clara" id="formacao" aria-labelledby="formacao-titulo">
+  <div class="contentor">
+    <div class="cabecalho">
+      <h2 class="revelar" id="formacao-titulo">Formação que se aplica no dia seguinte</h2>
+      <p class="introducao revelar">Os nossos cursos não são palestras. São sessões práticas para quem vai mesmo criar, plantar ou vender. É assim que funcionam, em todas as edições.</p>
+    </div>
+
+    <ul class="grelha grelha--metodo metodo">
+      <li class="metodo__item revelar"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-relogio"></use></svg><h3>Sessões curtas</h3><p>Duas horas por dia, para quem trabalha e não pode parar a vida.</p></li>
+      <li class="metodo__item revelar"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-conversa"></use></svg><h3>Linguagem simples</h3><p>Cada conceito explicado com exemplos da nossa realidade.</p></li>
+      <li class="metodo__item revelar"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-terreno"></use></svg><h3>Prática no terreno</h3><p>Trabalho numa exploração real, com o formador ao lado.</p></li>
+      <li class="metodo__item revelar"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-calculadora"></use></svg><h3>Cálculo de custos</h3><p>Cada curso fecha com as contas: quanto custa começar e manter.</p></li>
+      <li class="metodo__item revelar"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-certificado"></use></svg><h3>Certificado</h3><p>Quem cumpre a carga horária recebe certificado de participação.</p></li>
+    </ul>
+
+    <!-- Cartões das edições (preenchidos pelo script.js) -->
+    <div class="edicoes" id="edicoes" hidden>
+      <h3 class="edicoes__titulo">Edições dos cursos</h3>
+      <div class="grelha grelha--edicoes" id="lista-edicoes"></div>
+    </div>
+
+    <!-- Convite: aparece quando não há cursos com inscrições abertas -->
+    <div class="convite revelar" id="convite">
+      <div class="convite__texto">
+        <h3>Quer ser avisado do próximo curso?</h3>
+        <p>Deixe o seu nome e telefone. Quando abrirmos inscrições, enviamos a informação pelo WhatsApp, sem compromisso.</p>
+      </div>
+      <a class="botao botao--accao" href="#contacto" data-assunto="aviso">Quero ser avisado</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     3.9 GALERIA
+     Escondida por omissão. Aparece sozinha quando alguma fotografia
+     indicada em EDICOES (campo "galeria") carregar com sucesso.
+     ===================================================================== -->
+<section class="seccao" id="galeria" aria-labelledby="galeria-titulo" hidden>
+  <div class="contentor">
+    <div class="cabecalho">
+      <h2 id="galeria-titulo">Galeria</h2>
+      <p class="introducao">Momentos das nossas formações, na sala e no terreno.</p>
+    </div>
+    <div class="filtros" id="filtros" role="group" aria-label="Filtrar fotografias por edição" hidden></div>
+    <div class="mosaico" id="mosaico"></div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     3.10 TESTEMUNHOS
+     Escondida por omissão. Aparece quando alguma edição tiver "vozes".
+     ===================================================================== -->
+<section class="seccao seccao--escura" id="testemunhos" aria-labelledby="testemunhos-titulo" hidden>
+  <div class="contentor">
+    <div class="cabecalho">
+      <h2 id="testemunhos-titulo">O que dizem os formandos</h2>
+    </div>
+    <div class="carrossel" id="carrossel" aria-roledescription="carrossel">
+      <div class="carrossel__janela" id="carrossel-janela" aria-live="off">
+        <div class="carrossel__pista" id="carrossel-pista"></div>
+      </div>
+      <div class="carrossel__controlos" id="carrossel-controlos">
+        <button class="botao-icone" type="button" data-carrossel="-1" aria-label="Testemunho anterior"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-anterior"></use></svg></button>
+        <div class="carrossel__pontos" id="carrossel-pontos"></div>
+        <button class="botao-icone" type="button" data-carrossel="1" aria-label="Testemunho seguinte"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-seguinte"></use></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     3.11 PERGUNTAS FREQUENTES
+     Texto editável em FAQ, no script.js.
+     ===================================================================== -->
+<section class="seccao" id="perguntas" aria-labelledby="perguntas-titulo">
+  <div class="contentor contentor--estreito">
+    <div class="cabecalho">
+      <h2 class="revelar" id="perguntas-titulo">Perguntas frequentes</h2>
+      <p class="introducao revelar">As dúvidas que mais nos chegam. Se a sua não estiver aqui, escreva-nos.</p>
+    </div>
+    <ul class="faq" data-render="faq">
+      <li class="faq__item revelar"><h3 class="faq__pergunta"><button type="button" aria-expanded="false" aria-controls="faq-1" id="faq-b1"><span>Preciso de experiência para fazer os cursos?</span><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-mais"></use></svg></button></h3><div class="faq__painel" id="faq-1" role="region" aria-labelledby="faq-b1"><div class="faq__resposta"><p>Não. Os cursos são pensados para iniciantes e também para quem já cria ou cultiva e quer organizar melhor o trabalho. Começamos sempre pelo básico.</p></div></div></li>
+      <li class="faq__item revelar"><h3 class="faq__pergunta"><button type="button" aria-expanded="false" aria-controls="faq-2" id="faq-b2"><span>Como faço a inscrição?</span><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-mais"></use></svg></button></h3><div class="faq__painel" id="faq-2" role="region" aria-labelledby="faq-b2"><div class="faq__resposta"><p>Preencha o formulário no fim da página ou escreva-nos pelo WhatsApp. Confirmamos a vaga e explicamos a forma de pagamento.</p></div></div></li>
+      <li class="faq__item revelar"><h3 class="faq__pergunta"><button type="button" aria-expanded="false" aria-controls="faq-3" id="faq-b3"><span>Recebo certificado?</span><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-mais"></use></svg></button></h3><div class="faq__painel" id="faq-3" role="region" aria-labelledby="faq-b3"><div class="faq__resposta"><p>Sim. No fim de cada curso, quem cumpre a carga horária recebe certificado de participação da Kuwande Angola.</p></div></div></li>
+      <li class="faq__item revelar"><h3 class="faq__pergunta"><button type="button" aria-expanded="false" aria-controls="faq-4" id="faq-b4"><span>Os cursos são só no Lubango?</span><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-mais"></use></svg></button></h3><div class="faq__painel" id="faq-4" role="region" aria-labelledby="faq-b4"><div class="faq__resposta"><p>A maior parte decorre no Lubango, com prática em explorações da região. Para grupos organizados, podemos estudar uma formação noutro município da Huíla.</p></div></div></li>
+      <li class="faq__item revelar"><h3 class="faq__pergunta"><button type="button" aria-expanded="false" aria-controls="faq-5" id="faq-b5"><span>Fazem consultoria para projectos pequenos?</span><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-mais"></use></svg></button></h3><div class="faq__painel" id="faq-5" role="region" aria-labelledby="faq-b5"><div class="faq__resposta"><p>Sim. Trabalhamos com projectos de todos os tamanhos. O primeiro passo é uma conversa para perceber a sua situação.</p></div></div></li>
+      <li class="faq__item revelar"><h3 class="faq__pergunta"><button type="button" aria-expanded="false" aria-controls="faq-6" id="faq-b6"><span>Garantem que vou ganhar dinheiro?</span><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-mais"></use></svg></button></h3><div class="faq__painel" id="faq-6" role="region" aria-labelledby="faq-b6"><div class="faq__resposta"><p>Não. Ninguém sério pode garantir lucro. O que garantimos é que sai a saber fazer as contas, os cuidados e os passos certos para decidir bem.</p></div></div></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     3.12 CONTACTO E INSCRIÇÃO
+     O formulário não envia nada para nenhum servidor: monta a mensagem e
+     abre o WhatsApp já preenchido. Os contactos vêm de EMPRESA, no script.js.
+     ===================================================================== -->
+<section class="seccao seccao--clara" id="contacto" aria-labelledby="contacto-titulo">
+  <div class="contentor">
+    <div class="cabecalho">
+      <h2 class="revelar" id="contacto-titulo">Fale connosco</h2>
+      <p class="introducao revelar">Preencha os três campos e carregue em enviar. O WhatsApp abre com a mensagem já escrita. Só tem de confirmar o envio.</p>
+    </div>
+
+    <div class="contacto">
+      <form class="formulario revelar" id="formulario" action="https://wa.me/244974477016" method="get" novalidate>
+        <div class="campo">
+          <label for="campo-nome">Nome</label>
+          <input id="campo-nome" name="nome" type="text" autocomplete="name" required aria-describedby="erro-nome">
+          <p class="campo__erro" id="erro-nome" aria-live="polite"></p>
+        </div>
+        <div class="campo">
+          <label for="campo-telefone">Telefone</label>
+          <input id="campo-telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="923 456 789" required aria-describedby="erro-telefone">
+          <p class="campo__erro" id="erro-telefone" aria-live="polite"></p>
+        </div>
+        <div class="campo">
+          <label for="campo-assunto">Assunto</label>
+          <select id="campo-assunto" name="assunto" required aria-describedby="erro-assunto">
+            <option value="">Escolha uma opção</option>
+            <option>Formação profissional</option>
+            <option>Produção agropecuária</option>
+            <option>Consultoria e projectos</option>
+            <option>Comércio de material e equipamento</option>
+            <option>Quero ser avisado do próximo curso</option>
+            <option>Outro assunto</option>
+          </select>
+          <p class="campo__erro" id="erro-assunto" aria-live="polite"></p>
+        </div>
+        <button class="botao botao--accao botao--largo" type="submit">
+          <svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-whatsapp"></use></svg>Enviar pelo WhatsApp
+        </button>
+        <p class="formulario__estado" id="formulario-estado" role="status" aria-live="polite"></p>
+      </form>
+
+      <ul class="blocos-contacto">
+        <li class="bloco revelar">
+          <span class="bloco__icone"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-telefone"></use></svg></span>
+          <div><h3>Telefone e WhatsApp</h3><a data-campo="telefone" href="tel:+244974477016">+244 974 477 016</a></div>
+        </li>
+        <li class="bloco revelar" data-bloco="email" hidden>
+          <span class="bloco__icone"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-email"></use></svg></span>
+          <div><h3>E-mail</h3><a data-campo="email" href="#"></a></div>
+        </li>
+        <li class="bloco revelar">
+          <span class="bloco__icone"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-pin"></use></svg></span>
+          <div><h3>Morada</h3><p data-campo="morada">Lubango, Huíla, Angola</p></div>
+        </li>
+        <li class="bloco revelar">
+          <span class="bloco__icone"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-relogio"></use></svg></span>
+          <div><h3>Horário de atendimento</h3><p data-campo="horario">Segunda a sexta, das 08h00 às 17h00. Sábado, das 08h00 às 12h00.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- =====================================================================
+     3.13 RODAPÉ
+     ===================================================================== -->
+<footer class="rodape">
+  <div class="tricolor" aria-hidden="true"></div>
+  <div class="contentor rodape__grelha">
+    <div class="rodape__coluna">
+      <p class="rodape__nome">Kuwande Angola, Lda.</p>
+      <p>Comércio e prestação de serviços. Formação, produção, consultoria e equipamento para o campo, a partir do Lubango.</p>
+      <p class="rodape__slogan" data-campo="slogan">Atitudes que geram valor</p>
+    </div>
+    <nav class="rodape__coluna" aria-label="Navegação do rodapé">
+      <h2 class="rodape__titulo">Navegação</h2>
+      <ul class="rodape__lista">
+        <li><a href="#quem-somos">Quem somos</a></li>
+        <li><a href="#areas">Áreas</a></li>
+        <li><a href="#processo">Como trabalhamos</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li data-menu="galeria" hidden><a href="#galeria">Galeria</a></li>
+        <li data-menu="testemunhos" hidden><a href="#testemunhos">Testemunhos</a></li>
+        <li><a href="#perguntas">Perguntas frequentes</a></li>
+      </ul>
+    </nav>
+    <div class="rodape__coluna">
+      <h2 class="rodape__titulo">Áreas</h2>
+      <ul class="rodape__lista" data-render="rodape-areas">
+        <li><a href="#areas">Formação profissional</a></li>
+        <li><a href="#areas">Produção agropecuária</a></li>
+        <li><a href="#areas">Consultoria e projectos</a></li>
+        <li><a href="#areas">Comércio de material e equipamento</a></li>
+      </ul>
+    </div>
+    <div class="rodape__coluna">
+      <h2 class="rodape__titulo">Contactos</h2>
+      <ul class="rodape__lista">
+        <li><a data-campo="telefone" href="tel:+244974477016">+244 974 477 016</a></li>
+        <li data-bloco="email" hidden><a data-campo="email" href="#"></a></li>
+        <li><span data-campo="morada">Lubango, Huíla, Angola</span></li>
+        <li><a data-whatsapp href="https://wa.me/244974477016">Escrever pelo WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="contentor rodape__legal">
+    <p>© <span id="ano">2026</span> Kuwande Angola, Lda. Todos os direitos reservados. Sede no Lubango, Huíla, Angola.</p>
+    <!-- NIF: quando quiser mostrar o número de identificação fiscal,
+         apague as marcas de comentário da linha abaixo e escreva o número.
+    <p>NIF: 0000000000</p>
+    -->
+  </div>
+</footer>
+
+
+<!-- =====================================================================
+     3.14 BOTÃO FLUTUANTE DE WHATSAPP
+     ===================================================================== -->
+<a class="flutuante" id="flutuante" data-whatsapp href="https://wa.me/244974477016" aria-label="Falar connosco pelo WhatsApp">
+  <svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-whatsapp"></use></svg>
+</a>
+
+
+<!-- =====================================================================
+     JANELA DO PROGRAMA DE CADA EDIÇÃO
+     ===================================================================== -->
+<div class="janela" id="janela-programa" role="dialog" aria-modal="true" aria-labelledby="janela-titulo" hidden>
+  <div class="janela__veu" data-fechar></div>
+  <div class="janela__caixa">
+    <button class="botao-icone janela__fechar" type="button" data-fechar aria-label="Fechar programa"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-fechar"></use></svg></button>
+    <div class="janela__conteudo" id="janela-conteudo"></div>
   </div>
 </div>
-                
-                <!-- Service Card 3 -->
-                <div class="service-card bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-8 border border-indigo-200 shadow-xl hover:shadow-2xl transition-all duration-300">
-                    <i class="fas fa-bullhorn text-5xl text-indigo-600 mb-4"></i>
-                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">Marketing Digital</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Estratégias de marketing inteligentes, focadas em resultados, para impulsionar sua presença digital.
-                    </p>
-                    <ul class="text-gray-700 mb-6 space-y-2">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i>Estratégias Personalizadas</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i>Análise de Dados</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i>ROI Garantido</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 text-white font-semibold transition-all duration-300 hover:shadow-lg">
-                        Saiba Mais <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                     <img 
-  src="marketing.png" 
-  alt="Marketing Digital"
-  class="w-full rounded-2xl mb-4 object-cover marketing-img"
-/>
-                </div>
-            </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section container mx-auto px-6 py-12">
-            <h2 class="text-5xl font-black text-center mb-2 bg-gradient-to-r from-purple-700 via-pink-700 to-indigo-700 bg-clip-text text-transparent">
-                <i class="fas fa-hand-holding-heart mr-3"></i>Fale Conosco
-            </h2>
-            <p class="text-xl text-center text-gray-700 mb-12">Vamos criar algo extraordinário juntos!</p>
-            
-            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <div class="space-y-6">
-                    <h3 class="text-3xl font-bold text-purple-700">
-                        <i class="fas fa-comments mr-2 text-pink-600"></i>Entre em Contato
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Tem uma ideia ou projeto em mente? Deixe-nos ajudá-lo a transformá-lo em algo magnífico.
-                    </p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
-                            <i class="fas fa-phone-volume text-purple-600 text-2xl"></i>
-                            <span class="text-lg font-semibold text-gray-800">+244 959 622 160</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-4 bg-gradient-to-r from-pink-50 to-indigo-50 rounded-xl border border-pink-200">
-                            <i class="fas fa-envelope text-pink-600 text-2xl"></i>
-                            <span class="text-lg font-semibold text-gray-800">cybernovasolucao@gmail.com</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl border border-indigo-200">
-                            <i class="fas fa-map-marker-alt text-indigo-600 text-2xl"></i>
-                            <span class="text-lg font-semibold text-gray-800">Luanda, Angola</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <form id="contact-form" class="space-y-6 bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-3xl border border-purple-200 shadow-xl">
-                    <div>
-                        <label for="name" class="block text-sm font-semibold text-purple-700 uppercase tracking-wide mb-2">
-                            <i class="fas fa-user mr-2"></i>Nome Completo
-                        </label>
-                        <input type="text" id="name" required 
-                               class="w-full px-5 py-4 border-2 border-purple-200 rounded-2xl bg-white text-purple-900 placeholder-purple-400 focus:outline-none focus:border-purple-400 focus:ring-4 focus:ring-purple-100 transition-all">
-                    </div>
-                    
-                    <div>
-                        <label for="email" class="block text-sm font-semibold text-pink-700 uppercase tracking-wide mb-2">
-                            <i class="fas fa-at mr-2"></i>Email
-                        </label>
-                        <input type="email" id="email" required 
-                               class="w-full px-5 py-4 border-2 border-pink-200 rounded-2xl bg-white text-pink-900 placeholder-pink-400 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all">
-                    </div>
-                    
-                    <div>
-                        <label for="message" class="block text-sm font-semibold text-indigo-700 uppercase tracking-wide mb-2">
-                            <i class="fas fa-pen mr-2"></i>Mensagem
-                        </label>
-                        <textarea id="message" rows="5" required 
-                                  class="w-full px-5 py-4 border-2 border-indigo-200 rounded-2xl bg-white text-indigo-900 placeholder-indigo-400 focus:outline-none focus:border-indigo-400 focus:ring-4 focus:ring-indigo-100 transition-all"></textarea>
-                    </div>
-                    
-                    <button type="submit" 
-                            class="w-full py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 text-white font-bold text-xl rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                        <i class="fas fa-paper-plane mr-2"></i>Enviar Mensagem
-                    </button>
-                </form>
-            </div>
-        </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-purple-900 via-pink-900 to-indigo-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-8">
-                <h3 class="text-3xl font-black mb-4">
-                    <i class="fas fa-crown mr-3"></i>CyberNova Solução
-                </h3>
-                <p class="text-xl text-purple-200">Elegância & Tecnologia em Perfeita Harmonia</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div class="text-center">
-                    <h4 class="text-xl font-semibold mb-3 flex items-center justify-center gap-2">
-                        <i class="fas fa-globe"></i>Redes Sociais
-                    </h4>
-                    <div class="flex justify-center gap-4">
-                        <a href="#" class="text-3xl text-purple-300 hover:text-pink-300 transition-all duration-300"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-3xl text-purple-300 hover:text-pink-300 transition-all duration-300"><i class="fab fa-github"></i></a>
-                        <a href="#" class="text-3xl text-purple-300 hover:text-pink-300 transition-all duration-300"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-3xl text-purple-300 hover:text-pink-300 transition-all duration-300"><i class="fab fa-dribbble"></i></a>
-                    </div>
-                </div>
-                
-                <div class="text-center">
-                    <h4 class="text-xl font-semibold mb-3 flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp"></i>WhatsApp
-                    </h4>
-                    <p class="text-2xl font-bold text-yellow-300">+244 959 622 160</p>
-                </div>
-                
-                <div class="text-center">
-                    <h4 class="text-xl font-semibold mb-3 flex items-center justify-center gap-2">
-                        <i class="fas fa-clock"></i>Horário
-                    </h4>
-                    <p class="text-purple-200">Seg - Sex: 9:00 - 18:00</p>
-                    <p class="text-purple-200">Sáb: 10:00 - 14:00</p>
-                </div>
-            </div>
-            
-            <p class="text-center pt-8 border-t border-purple-800 text-purple-300 text-lg">
-                &copy; <span id="year"></span> CyberNova Solução. Todos os direitos reservados.
-            </p>
-        </div>
-    </footer>
-    
-    <script src="script.js"></script>
+<!-- =====================================================================
+     VISUALIZADOR DE FOTOGRAFIAS (ecrã inteiro)
+     ===================================================================== -->
+<div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Visualizador de fotografias" hidden>
+  <button class="botao-icone visor__fechar" type="button" data-fechar aria-label="Fechar visualizador"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-fechar"></use></svg></button>
+  <button class="botao-icone visor__nav visor__nav--ant" type="button" data-visor="-1" aria-label="Fotografia anterior"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-anterior"></use></svg></button>
+  <figure class="visor__figura">
+    <img class="visor__img" id="visor-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+    <figcaption class="visor__legenda"><span id="visor-legenda"></span> <span class="visor__contador" id="visor-contador"></span></figcaption>
+  </figure>
+  <button class="botao-icone visor__nav visor__nav--seg" type="button" data-visor="1" aria-label="Fotografia seguinte"><svg class="ico" aria-hidden="true" focusable="false"><use xlink:href="#i-seguinte"></use></svg></button>
+</div>
+
 </body>
 </html>
